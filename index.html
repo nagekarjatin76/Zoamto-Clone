@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Zomato</title>
+    <link rel="icon" type="image/x-icon" href="zomato.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- header start -->
+    <div class="background_image">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#"
+                  ><i class="fa fa-mobile" aria-hidden="true"></i> Get the
+                  App</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="#"
+                  >Investor Relations</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Add restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Log in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Sign up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        class="for_text text-white d-flex justify-content-center flex-column align-items-center"
+      >
+        <img src="zomato_text.avif" alt="zomato" />
+        <h1>Discover the best food & drinks in Ahmedabad</h1>
+
+        <div class="for_search d-flex align-items-center">
+          <i class="fa fa-map-marker text-danger" aria-hidden="true"></i>
+          <input type="text" placeholder="Ahmedabad" class="border-0" />
+          <i class="fa fa-caret-down text-dark drop" aria-hidden="true"></i>
+          <i class="fa fa-search text-secondary" aria-hidden="true"></i>
+          <input
+            type="text"
+            placeholder="Search for restaurant, cuisine or a dish"
+            class="border-0 w-100"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+
+    <!-- card start -->
+    <div class="container">
+      <div class="row order_online">
+        <div class="col-md-6">
+          <div class="card">
+            <img src="https://dealbates.com/timthumb.php?src=https://dealbates.com/uploads/1619940727680.jpg&w=600&h=430&zc=2" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><b>Order Online</b></h5>
+              <p class="card-text">Stay home and order to your doorstep</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title"><b>Dining</b></h5>
+              <p class="card-text">View the city's favourite dining venues</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- card end -->
+
+    <!-- collection start  -->
+    <div class="container">
+      <h2><b>Collections</b></h2>
+      <div class="d-flex justify-content-between">
+        <p class="collection_text">
+          Explore curated lists of top restaurants, cafes, pubs, and bars in
+          Ahmedabad, based on trends
+        </p>
+        <p class="text-danger">
+          All collections in Ahmedabad
+          <i class="fa fa-caret-right" aria-hidden="true"></i>
+        </p>
+      </div>
+
+      <div class="row text-white">
+        <div class="col-md-3 collection_image">
+          <img
+            src="https://4.imimg.com/data4/XA/GD/MY-13229538/commercial-kitchen-equipments-500x500.jpg"
+            class="collection_photo"
+            alt="Forest"
+          />
+          <div class="collection_photo_txt">
+            <p class="mb-0">Great Buffets</p>
+            <p>7 Places <i class="fa fa-caret-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+        <div class="col-md-3 collection_image">
+          <img
+            src="https://media-cdn.tripadvisor.com/media/photo-s/10/e5/73/92/photo1jpg.jpg"
+            class="collection_photo"
+            alt="Forest"
+          />
+          <div class="collection_photo_txt">
+            <p class="mb-0">Picturesque Cafes</p>
+            <p>8 Places <i class="fa fa-caret-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+        <div class="col-md-3 collection_image">
+          <img id="img3"
+            src="https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/restaurant%2F640634%2Frestaurant020170327115412.jpg"
+            class="collection_photo"
+            alt="Forest"
+          />
+          <div class="collection_photo_txt">
+            <p class="mb-0">Luxury At Its Best</p>
+            <p>
+              10 Places <i class="fa fa-caret-right" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 collection_image">
+          <img id="img4"
+            src="https://www.culturalindia.net/iliimages/Gujarati-Food-1.jpg"
+            class="collection_photo"
+            alt="Forest"
+          />
+          <div class="collection_photo_txt">
+            <p class="mb-0">Gujarati Thali</p>
+            <p>
+              10 Places <i class="fa fa-caret-right" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- collection end  -->
+
+    <!-- popular start  -->
+    <div class="container popular_main">
+      <h2 class="mb-5">Popular localities in and around <b>Ahmedabad</b></h2>
+
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Bodakdev</h5>
+                <p>341 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Navrangpura</h5>
+                <p>292 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Prahlad Nagar</h5>
+                <p>178 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Satelite</h5>
+                <p>329 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Vastrapur</h5>
+                <p>213 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>C G Road</h5>
+                <p>90 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Gurukul</h5>
+                <p>82 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-between align-items-center places"
+            >
+              <div>
+                <h5>Thaltej</h5>
+                <p>207 places</p>
+              </div>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card popular">
+            <div
+              class="card-body d-flex justify-content-center align-items-center places"
+            >
+              <h5>see more</h5>
+              &nbsp;&nbsp;
+              <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popular end  -->
+
+    <!-- get start  -->
+    <div class="get">
+      <div class="d-flex justify-content-center">
+        <div>
+          <img src="getapp.avif" class="get_img" alt="" />
+        </div>
+        <div>
+          <h1 class="mb-3"><b>Get the Zomato app</b></h1>
+          <p>
+            We will send you a link, open it on your phone to download<br />the
+            app
+          </p>
+          <form>
+            <input type="radio" name="fav_language" value="Email" />
+            <label for="email" class="radio_email">Email</label>
+            <input type="radio" name="fav_language" value="Phone" />
+            <label for="phone">Phone</label><br />
+            <input type="email" placeholder="Email" class="input_email mb-4" />
+            <button class="text-white bg-danger">Share App Link</button>
+          </form>
+          <p class="text-secondary">Download app from</p>
+          <img src="googleplay.webp" class="g_play" alt="" />
+          <img src="appstore.webp" class="g_play" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- get end  -->
+
+    <!-- explore start  -->
+    <div class="container explore_main">
+      <h2 class="mb-4"><b>Explore options near me</b></h2>
+
+      <div class="card mb-3 explore">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h5>Popular cuisines near me</h5>
+          </div>
+          <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="card mb-3 explore">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h5>Popular restaurant types near me</h5>
+          </div>
+          <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="card mb-3 explore">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h5>Top Restaurant Chains</h5>
+          </div>
+          <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div class="card explore">
+        <div
+          class="card-body d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h5>Cities We Deliver To</h5>
+          </div>
+          <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <!-- explore end  -->
+
+    <!-- footer start  -->
+    <div class="bg_footer">
+      <div class="container py-4 pt-5">
+        <div class="d-flex justify-content-between zomato_logo">
+          <img src="zomato_footer.avif" alt="" />
+          <div class="d-flex for_border">
+            <div class="india">
+              <img src="flag-of-india.svg" alt="" class="india_logo" />
+              India <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+            </div>
+            <div class="language">
+              <img src="language.svg" alt="" /> English
+              <i class="fa fa-angle-down mb-2" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex footer_content pt-5">
+          <div class="first">
+            <ul>
+              <li class="text-dark"><b>ABOUT ZOMATO</b></li>
+              <li>Who We Are</li>
+              <li>Blog</li>
+              <li>Work With Us</li>
+              <li>Investor Relations</li>
+              <li>Report Fraud</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div class="second">
+            <ul>
+              <li class="text-dark"><b>ZOMAVERSE</b></li>
+              <li>Zomato</li>
+              <li>Blinkit</li>
+              <li>Feeding India</li>
+              <li>Hyperpure</li>
+              <li>Zomaland</li>
+            </ul>
+          </div>
+          <div class="third">
+            <ul>
+              <li class="text-dark"><b>FOR RESTAURANTS</b></li>
+              <li>Partner With Us</li>
+              <li>Apps For You</li>
+
+              <li class="text-dark mt-3">
+                <b>FOR ENTERPRISES</b>
+              </li>
+              <li>Zomato For Work</li>
+            </ul>
+          </div>
+          <div class="forth">
+            <ul>
+              <li class="text-dark"><b>LEARN MORE</b></li>
+              <li>Privacy</li>
+              <li>Security</li>
+
+              <li>Terms</li>
+              <li>Sitemap</li>
+            </ul>
+          </div>
+          <div class="fifth">
+            <li class="text-dark"><b>SOCIAL LINKS</b></li>
+            <li class="social_icon">
+              <i  href="https://www.linkedin.com/in/nagekar-jatin-a97aa424a/"  class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-facebook"></i>
+            </li>
+            <li>
+              <img src="images/appstore.webp" alt="" class="app_store mt-3" />
+            </li>
+            <li>
+              <img src="images/googleplay.webp" alt="" class="app_store mt-2" />
+            </li>
+          </div>
+        </div>
+
+        <hr />
+        <p>
+          By continuing past this page, you agree to our Terms of Service,
+          Cookie Policy, Privacy Policy and Content Policies. All trademarks are
+          properties of their respective owners. 2008-2022 &copy; Zomato™ Ltd.(@Nagekar Jatin)
+          All rights reserved.
+        </p>
+      </div>
+    </div>
+    <!-- footer start  -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
